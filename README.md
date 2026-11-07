@@ -1,6 +1,6 @@
 # Lab 2 - Intelligent Agents & the PEAS Framework
 
-**Student:** Rasikh Ali (42365) | **Course:** CAI601400 - Artificial Intelligence | **Lab:** 2 (CLO1)
+**Student:** Sajid Hussain (BSAIM-046) | **Course:** CAI601400 - Artificial Intelligence | **Lab:** 2 (CLO1)
 
 A smart-classroom energy agent (temperature + occupancy -> ECO / COOL / WARM / IDLE),
 first as a reflex agent, then as a stateful agent that avoids repeating identical

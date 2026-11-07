@@ -1,0 +1,13 @@
+step | previous mode | percept | target | command
+1 | None | (29, True) | COOL | SEND
+2 | COOL | (29, True) | COOL | NO-COMMAND
+3 | COOL | (26, True) | IDLE | SEND
+4 | IDLE | (20, True) | IDLE | NO-COMMAND
+5 | IDLE | (19, True) | WARM | SEND
+6 | WARM | (29, False) | ECO | SEND
+7 | ECO | (29, False) | ECO | NO-COMMAND
+8 | ECO | (29, True) | COOL | SEND
+
+Reflex agent commands issued   : 8 of 8
+Stateful agent commands issued : 5 of 8
+Repeated commands avoided      : 3

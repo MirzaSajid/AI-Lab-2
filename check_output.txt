@@ -1,0 +1,28 @@
+== Part 1: correctness checks ==
+PASS | exact boundary 26 C occupied -> IDLE
+PASS | exact boundary 20 C occupied -> IDLE
+PASS | 26.1 C occupied -> COOL
+PASS | 19.9 C occupied -> WARM
+PASS | empty room beats hot reading -> ECO
+PASS | empty room beats cold reading -> ECO
+PASS | first percept always sends a command
+PASS | identical repeated percept sends no command
+PASS | mode transition sends a command
+PASS | transition to empty room sends ECO
+PASS | stateful targets equal reflex targets (sweep -10..45 C)
+
+== Part 2: edge case - noisy readings around 26 C ==
+temperature sequence: [26.5, 25.5, 26.5, 25.5, 26.5]
+stateful modes      : ['COOL', 'IDLE', 'COOL', 'IDLE', 'COOL']
+stateful commands   : 5 of 5
+PASS | stateful agent still chatters (command every step)
+
+== Part 3: proposed improvement - hysteresis band (extension) ==
+hysteresis modes    : ['COOL', 'COOL', 'COOL', 'COOL', 'COOL']
+hysteresis commands : 1 of 5
+PASS | hysteresis agent sends one command for the noisy sequence
+PASS | hysteresis: cold start at 27 C still COOLs
+PASS | hysteresis: empty room still ECO
+PASS | hysteresis: releases cooling at 25 C
+
+16/16 checks passed
